@@ -5,8 +5,18 @@ import personal from "../assets/personal.jpg";
 import personal2 from "../assets/personal2.jpg";
 import weight from "../assets/weight.jpg";
 import cardio from "../assets/cardio.jpg";
+import bodybuilding from "../assets/body.jpg";
+import regular from "../assets/regular.jpg";
+import work from "../assets/work.jpg";
 
 const content = () => {
+
+    const programs = [
+      { title: "BODYBUILDING", image: bodybuilding },
+      { title: "REGULAR WORKOUT", image: regular },
+      { title: "SCREETCHING WORKOUT", image: work }
+    ];
+
   return (
     <>
     <div className='w-full min-h-screen bg-cover bg-center backdrop-opacity-100'
@@ -114,17 +124,49 @@ const content = () => {
             <p className='text-4xl text-white font-bold'>PROGRAMS THAT <span className='text-[#C7FF39]'>FIT YOU</span></p>
             <p className='text-[12px] font-extralight text-white'>Whether you are just starting or levelling up , our coaching is build around <br /> your needs, not a one size-fits-all plan.</p>
         </div>
-        <div className='w-full mt-10 flex flex-row justify-around items-center'>
-            <img 
+        <div className='w-full mt-10 flex flex-row justify-around items-center gap-8'>
+            {/* Weight Lifting Section */}
+            <div className='relative w-160 h-80'>
+              <img 
                 src={weight}
                 alt="lifting"
-                className='w-160 h-80 rounded-2xl object-cover transition-transform duration-300 hover:scale-103'
-            />
-            <img 
+                className='w-full h-full rounded-2xl object-cover transition-transform duration-300 hover:scale-103'
+              />
+              <p className='absolute bottom-4 left-4 text-white text-3xl font-bold'>WEIGHT LIFTING</p>
+            </div>
+
+            {/* Cardio Section */}
+            <div className='relative w-110 h-80'>
+              <img 
                 src={cardio}
                 alt="cardio"
-                className='w-110 h-80 rounded-2xl object-cover transition-transform duration-300 hover:scale-103'
-            />
+                className='w-full h-full rounded-2xl object-cover transition-transform duration-300 hover:scale-103'
+              />
+              <p className='absolute bottom-4 left-4 text-white text-3xl font-bold'>CARDIO</p>
+            </div>
+        </div>
+
+        <div className='w-full mt-10 flex flex-row justify-evenly items-center gap-8'>
+          {programs.map((program, index) => (
+            <div key={index} className='relative w-100 h-70'>
+              <img 
+                src={program.image}
+                alt={program.title}
+                className='w-full h-full rounded-2xl object-cover transition-transform duration-300 hover:scale-103'
+              />
+              <p className='absolute bottom-4 left-4 text-white text-3xl font-bold'>
+                {program.title}
+              </p>
+            </div>
+          ))}
+        </div>
+
+    </div>
+
+    {/* price */}
+    <div className='w-auto min-h-screen bg-[#363537]'>
+        <div className=''>
+
         </div>
     </div>
     </>
