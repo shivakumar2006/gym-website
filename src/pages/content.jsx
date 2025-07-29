@@ -44,6 +44,9 @@ const content = () => {
                 </button>
             </div>
         </div>
+
+        {/* Categor Banner */}
+        
     </div>
   )
 }
