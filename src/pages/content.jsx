@@ -4,6 +4,7 @@ import { CgGym } from "react-icons/cg";
 
 const content = () => {
   return (
+    <>
     <div className='w-full min-h-screen bg-cover bg-center backdrop-opacity-100'
         style={{
             backgroundImage: `url(${image})`,
@@ -45,10 +46,46 @@ const content = () => {
             </div>
         </div>
 
-        {/* Categor Banner */}
-        
     </div>
+
+
+    {/* personal training */}
+    <div className='w-auto min-h-screen bg-[#363537]'>
+        {/* Categor Banner */}
+        <div className='w-full h-15 text-2xl font-bold bg-[#FFFFFA] flex flex-row justify-center items-center gap-8'>
+            <p>STRENGTH TRAINING</p>
+            <p className='text-5xl mt-4'>*</p>
+            <p>WEIGHT LIFTING</p>
+            <p className='text-5xl mt-4'>*</p>
+            <p>BODYBUILDING</p>
+            <p className='text-5xl mt-4'>*</p>
+            <p>CARDIO</p>
+            <p className='text-5xl mt-4'>*</p>
+            <p>ONLINE & IN-PERSON</p>
+        </div>
+
+        <div className='w-screen h-full flex flex-row justify-center items-center'>
+            <div className='w-200 h-full border border-white flex flex-col justify-center items-center'>
+                <div className='w-full h-90 flex flex-col justify-center items-center'>
+                    <p className='text-[130px] mr-50 font-extrabold text-white'>﹥<span className='text-[#C7FF39]'>﹥</span></p>
+                    <p className='text-4xl font-bold text-white'>PERSONAL <span className='text-[#C7FF39]'>TRAINING</span></p>
+                </div>
+                <div className='w-full h-100 flex justify-center items-center'>
+                    <div className='w-80 h-70 rounded-2xl bg-black/20 flex flex-col justify-center items-center'>
+                        <p className='text-white'>Experience a full personal training <br /> sessions, free of charge</p>
+                        <button>
+                            
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div className='w-full h-full border border-pink-500 flex flex-col justify-center items-center'>
+
+            </div>
+        </div>
+    </div>
+    </>
   )
 }
 
-export default content
+export default content;
