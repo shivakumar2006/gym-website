@@ -33,6 +33,17 @@ const content = () => {
                 </div>
             </div>
         </div>
+
+        {/* Hero section */}
+        <div className='w-1/2 flex justify-start items-center'>
+            <div className='w-full flex-col h-auto text-white font-bold text-5xl flex justify-center items-center gap-8'>
+                <p className='mt-50'>STRONGER EVERY DAY <br /> START <span className='text-[#C7FF39]'>YOUR FITNESS</span> <br />  JOURNEY NOW</p>
+                <p className='text-[12px] font-extralight mr-17'>Get tailored training sessions just for you. Whether you want to lose weight, build <br /> strength, or develop healthy habits, our trainer are ready to help!</p>
+                <button className='w-40 h-12 mr-90 text-sm font-medium text-black bg-[#C7FF39] rounded-xl cursor-pointer'>
+                    Get Started Today
+                </button>
+            </div>
+        </div>
     </div>
   )
 }
