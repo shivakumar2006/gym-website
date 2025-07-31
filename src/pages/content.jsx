@@ -9,6 +9,7 @@ import bodybuilding from "../assets/body.jpg";
 import regular from "../assets/regular.jpg";
 import work from "../assets/work.jpg";
 import trainer from "../assets/trainer.jpg";
+import consult from "../assets/consult.jpg";
 import { FaUserCircle } from "react-icons/fa";
 
 
@@ -344,6 +345,31 @@ const content = () => {
 
 
             {/* personalized workout */}
+        <div className='w-full flex mt-30 justify-center items-center'>
+          <div className='relative w-[920px] h-[480px] rounded-2xl flex justify-center items-center'>
+            <img 
+              src={consult}
+              alt='consult'
+              className='w-full h-full opacity-60 rounded-2xl object-cover'
+            />
+
+            {/* Centered overlay */}
+            <div className='absolute inset-0 z-50 text-white flex flex-col justify-center items-center text-center gap-4'>
+              <p className='text-4xl  font-extrabold'>
+                PERSONALIZED WORKOUT PLANS <br /> 
+                <span className='text-[#C7FF39]'>ACHIEVE </span> YOUR GOALS.
+              </p>
+              <p className='text-[10px] font-extralight'>
+                Highlight customization and goal achievement, which can be enticing for <br />
+                those looking for tailored fitness solution.
+              </p>
+              <button className='w-30 h-13 rounded-2xl text-black bg-[#C7FF39] text-sm font-light flex justify-center items-center cursor-pointer'>
+                Contact Us
+              </button>
+            </div>
+          </div>
+        </div>
+
     </div>  
     </>
   )
