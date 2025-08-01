@@ -10,10 +10,24 @@ import regular from "../assets/regular.jpg";
 import work from "../assets/work.jpg";
 import trainer from "../assets/trainer.jpg";
 import consult from "../assets/consult.jpg";
+import { useRef } from 'react';
 import { FaUserCircle } from "react-icons/fa";
 
 
 const content = () => {
+
+    const homeRef = useRef(null);
+    const aboutRef = useRef(null);
+    const programsRef = useRef(null);
+    const pricingRef = useRef(null); 
+    const blogsRef = useRef(null);
+
+    const scrollToSection = (ref) => {
+      if (ref && ref.current) {
+        ref.current.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+
 
     const programs = [
       { title: "BODYBUILDING", image: bodybuilding },
@@ -63,9 +77,16 @@ const content = () => {
         },
     ]
 
+    const cards = [
+        { number: "50", title: "Training Programs"},
+        { number: "10", title: "Years of experience"},
+        { number: "100", title: "Happy Members"},
+        { number: "20", title: "Best Trainers"},
+    ]
+
   return (
     <>
-    <div className='w-full min-h-screen bg-cover bg-center backdrop-opacity-100'
+    <div ref={homeRef} className='w-full min-h-screen bg-cover bg-center backdrop-opacity-100'
         style={{
             backgroundImage: `url(${image})`,
         }}
@@ -78,9 +99,19 @@ const content = () => {
                     <p className='text-white text-3xl font-bold'>PROFITNESS</p>
                 </div>
                 <div className='w-auto h-auto flex flex-row justify-evenly items-center gap-8'>
-                    {["Home", "About", "Programs", "Pricing", "Blogs"].map((item, index) => (
-                        <p key={index} className='text-white font-extralight text-sm cursor-pointer hover:text-[#C7FF39]'>
-                            {item}
+                    {[
+                        { name: "Home", ref: homeRef},
+                        { name: "About", ref: aboutRef},
+                        { name: "Programs", ref: programsRef}, 
+                        { name: "Pricing", ref: pricingRef}, 
+                        { name: "Blogs", ref: blogsRef},
+                    ].map((item, index) => (
+                        <p 
+                            key={index} 
+                            className='text-white font-extralight text-sm cursor-pointer hover:text-[#C7FF39]'
+                            onClick={() => scrollToSection(item.ref)}
+                        >
+                            {item.name}
                         </p>
                     ))}
                 </div>
@@ -110,7 +141,7 @@ const content = () => {
 
 
     {/* personal training */}
-    <div className='w-auto min-h-screen bg-[#363537]'>
+    <div ref={aboutRef} className='w-auto min-h-screen bg-[#363537]'>
         {/* Categor Banner */}
         <div className='w-full h-15 text-2xl font-bold bg-[#FFFFFA] flex flex-row justify-center items-center gap-8'>
             <p>STRENGTH TRAINING</p>
@@ -167,7 +198,7 @@ const content = () => {
     </div>
 
         {/* programs */}
-    <div className='w-auto min-h-screen bg-black/90 flex flex-col'>
+    <div ref={programsRef} className='w-auto min-h-screen bg-black/90 flex flex-col'>
         <div className='w-full h-auto mt-20 flex flex-row justify-around items-center gap-50'>
             <p className='text-4xl text-white font-bold'>PROGRAMS THAT <span className='text-[#C7FF39]'>FIT YOU</span></p>
             <p className='text-[12px] font-extralight text-white'>Whether you are just starting or levelling up , our coaching is build around <br /> your needs, not a one size-fits-all plan.</p>
@@ -212,7 +243,7 @@ const content = () => {
     </div>
 
     {/* price */}
-    <div className='w-auto min-h-screen bg-[#363537]'>
+    <div ref={pricingRef} className='w-auto min-h-screen bg-[#363537]'>
         <div className='w-full flex flex-col'>
             <p className='text-[130px] ml-20 font-extrabold text-white tracking-tight'>
                 ﹥<span className='text-[#C7FF39]'>﹥</span>
@@ -309,7 +340,7 @@ const content = () => {
     </div>
 
           {/* tstimonials */}
-          <div className='w-full flex flex-col'>
+          <div ref={blogsRef} className='w-full flex flex-col'>
             <p className='text-[130px] ml-20 font-extrabold text-white tracking-tight'>
                 ﹥<span className='text-[#C7FF39]'>﹥</span>
             </p>
@@ -369,7 +400,17 @@ const content = () => {
             </div>
           </div>
         </div>
-
+        <div className='w-full mt-15 flex justify-center items-center'>
+            <div className='w-4xl h-30 flex flex-row justify-between items-center'>
+                {cards?.map((item, index) => (
+                    <div key={index} className='w-40 h-30 rounded-2xl bg-white/10 flex flex-col justify-center items-center gap-3'>
+                    <p className='text-white text-4xl font-extrabold'>{item.number}<span className='text-md font-extrabold'>+</span></p>
+                    <p className='text-white font-extralight text-[10px]'>{item.title}</p>
+                </div>
+                ))}
+                
+            </div>
+        </div>
     </div>  
     </>
   )
