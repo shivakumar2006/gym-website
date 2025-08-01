@@ -1,11 +1,24 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import "./App.css";
-import Content from "./pages/content";
+import { DNA } from 'react-loader-spinner';
+
+const Content = lazy(() => import("./pages/content"));
 
 const App = () => {
   return (
     <>
+    <Suspense fallback={
+        <div className="flex justify-center items-center h-[200px]">
+            <DNA
+              visible={true}
+              height={80}
+              width={80}
+              ariaLabel="dna-loading"
+            />
+          </div>
+    }>
         <Content />
+    </Suspense>
     </>
     // <div className='w-full min-h-screen bg-gray-400 text-black flex flex-row justify-evenly items-center '>
     //     <div className='w-100 h-30 border-black border rounded-2xl bg-[#1D1F20]'>
