@@ -8,11 +8,11 @@ const App = () => {
   return (
     <>
     <Suspense fallback={
-        <div className="flex justify-center items-center h-[200px]">
+        <div className="flex w-full justify-center items-center h-screen">
             <DNA
               visible={true}
-              height={80}
-              width={80}
+              height={150}
+              width={150}
               ariaLabel="dna-loading"
             />
           </div>

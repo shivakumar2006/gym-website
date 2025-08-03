@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import image from "../assets/gym.jpg";
 import { CgGym } from "react-icons/cg";
 import personal from "../assets/personal.jpg";
@@ -20,6 +20,7 @@ import { SiWhatsapp } from "react-icons/si";
 import { FiPhoneCall } from "react-icons/fi";
 import { IoMailOutline } from "react-icons/io5";
 import { IoLocationOutline } from "react-icons/io5";
+import { FiMenu, FiX } from 'react-icons/fi';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
@@ -35,6 +36,9 @@ const content = () => {
     const blogsRef = useRef(null);
     const contactRef = useRef(null);
     const getInTouch = useRef(null);
+    
+    const [ menuOpen, setMenuopen ] = useState(false);
+     const [navOpen, setNavOpen] = useState(false);
 
     const scrollToSection = (ref) => {
       if (ref && ref.current) {
@@ -104,79 +108,131 @@ const content = () => {
 
   return (
     <>
-    <div ref={homeRef} className='w-full min-h-screen bg-cover bg-center backdrop-opacity-100'
-        style={{
-            backgroundImage: `url(${image})`,
-        }}
-    >
-        {/* Navbar */}
-        <div className='w-full pt-8 flex justify-center items-center'>
-            <div className='w-7xl h-20 bg-white/5 rounded-2xl backdrop-blur-xs flex flex-row justify-around items-center'>
-                <div className='w-auto h-auto flex flex-row justify-center items-center gap-2'>
-                    <CgGym className='text-[#C7FF39] text-5xl'/>
-                    <p className='text-white text-3xl font-bold'>PROFITNESS</p>
-                </div>
-                <div className='w-auto h-auto flex flex-row justify-evenly items-center gap-8'>
-                    {[
-                        { name: "Home", ref: homeRef},
-                        { name: "About", ref: aboutRef},
-                        { name: "Programs", ref: programsRef}, 
-                        { name: "Pricing", ref: pricingRef}, 
-                        { name: "Testimonials", ref: blogsRef},
-                    ].map((item, index) => (
-                        <p 
-                            key={index} 
-                            className='text-white font-extralight text-sm cursor-pointer hover:text-[#C7FF39]'
-                            onClick={() => scrollToSection(item.ref)}
+           <div
+            ref={homeRef}
+            className='w-full min-h-screen bg-cover bg-center backdrop-opacity-100'
+            style={{ backgroundImage: `url(${image})` }}
+        >
+            {/* Navbar */}
+            <div className='w-full pt-8 flex justify-center items-center px-4 sm:px-0'>
+                <div className='w-full max-w-7xl h-20 bg-white/5 rounded-2xl backdrop-blur-xs flex justify-between items-center px-6 sm:px-10 relative'>
+
+                    {/* Logo */}
+                    <div className='flex items-center gap-2'>
+                        <CgGym className='text-[#C7FF39] text-5xl' />
+                        <p className='text-white text-2xl sm:text-3xl font-bold'>PROFITNESS</p>
+                    </div>
+
+                    {/* Desktop Nav */}
+                    <div className=' hidden lg:flex items-center gap-8'>
+                        {[
+                            { name: "Home", ref: homeRef },
+                            { name: "About", ref: aboutRef },
+                            { name: "Programs", ref: programsRef },
+                            { name: "Pricing", ref: pricingRef },
+                            { name: "Testimonials", ref: blogsRef },
+                        ].map((item, index) => (
+                            <p
+                                key={index}
+                                className='text-white font-extralight text-sm lg:mr-[30px] cursor-pointer hover:text-[#C7FF39]'
+                                onClick={() => scrollToSection(item.ref)}
+                            >
+                                {item.name}
+                            </p>
+                        ))}
+                        <button
+                            className='px-4 py-2 border border-white text-white text-sm font-light rounded-xl'
+                            onClick={() => scrollToSection(contactRef)}
                         >
-                            {item.name}
-                        </p>
-                    ))}
+                            Contact US
+                        </button>
+                        <button
+                            className='px-4 py-2 bg-[#C7FF39] text-black text-sm font-medium rounded-xl'
+                            onClick={() => scrollToSection(getInTouch)}
+                        >
+                            Get in Touch
+                        </button>
+                    </div>
+
+                    {/* Mobile Menu Toggle */}
+                    <div className='lg:hidden'>
+                        <button onClick={() => setNavOpen(!navOpen)}>
+                            {navOpen ? (
+                                <FiX className='text-white text-3xl' />
+                            ) : (
+                                <FiMenu className='text-white text-3xl' />
+                            )}
+                        </button>
+                    </div>
+
+                    {/* Mobile Nav */}
+                    {navOpen && (
+                        <div className='absolute top-20 left-0 w-full bg-black/90 rounded-b-2xl px-6 py-4 flex flex-col gap-4 lg:hidden z-50'>
+                            {[
+                                { name: "Home", ref: homeRef },
+                                { name: "About", ref: aboutRef },
+                                { name: "Programs", ref: programsRef },
+                                { name: "Pricing", ref: pricingRef },
+                                { name: "Testimonials", ref: blogsRef },
+                            ].map((item, index) => (
+                                <p
+                                    key={index}
+                                    className='text-white font-light text-base cursor-pointer hover:text-[#C7FF39]'
+                                    onClick={() => scrollToSection(item.ref)}
+                                >
+                                    {item.name}
+                                </p>
+                            ))}
+                            <button
+                                className='w-full py-2 mt-2 border border-white text-white font-light rounded-xl'
+                                onClick={() => scrollToSection(contactRef)}
+                            >
+                                Contact US
+                            </button>
+                            <button
+                                className='w-full py-2 bg-[#C7FF39] text-black font-medium rounded-xl'
+                                onClick={() => scrollToSection(getInTouch)}
+                            >
+                                Get in Touch
+                            </button>
+                        </div>
+                    )}
                 </div>
-                <div className='w-auto h-auto flex flex-row justify-center items-center gap-5'>
-                    <button 
-                        className='w-30 h-12 border border-white text-white font-extralight rounded-xl cursor-pointer'
-                        onClick={() => scrollToSection(contactRef)}
+            </div>
+
+            {/* Hero section */}
+            <div className='w-full flex justify-start items-center px-6 sm:px-16 mt-50 lg:ml-10'>
+                <div className='w-full sm:w-1/2 text-white font-bold text-4xl sm:text-5xl flex flex-col gap-8'>
+                    <p>STRONGER EVERY DAY <br /> START <span className='text-[#C7FF39]'>YOUR FITNESS</span> <br /> JOURNEY NOW</p>
+                    <p className='text-sm sm:text-[12px] font-extralight'>
+                        Get tailored training sessions just for you. Whether you want to lose weight, build <br className='hidden sm:inline' /> strength, or develop healthy habits, our trainers are ready to help!
+                    </p>
+                    <button
+                        className='w-40 h-12 text-sm font-medium text-black bg-[#C7FF39] rounded-xl'
+                        onClick={() => scrollToSection(pricingRef)}
                     >
-                        Contact US
-                    </button>
-                     <button 
-                        className='w-30 h-12 bg-[#C7FF39] rounded-xl cursor-pointer'
-                        onClick={() => scrollToSection(getInTouch)}
-                    >
-                        Get in Touch
+                        Get Started Today
                     </button>
                 </div>
             </div>
         </div>
-
-        {/* Hero section */}
-        <div className='w-1/2 flex justify-start items-center'>
-            <div className='w-full flex-col h-auto text-white font-bold text-5xl flex justify-center items-center gap-8'>
-                <p className='mt-50'>STRONGER EVERY DAY <br /> START <span className='text-[#C7FF39]'>YOUR FITNESS</span> <br />  JOURNEY NOW</p>
-                <p className='text-[12px] font-extralight mr-17'>Get tailored training sessions just for you. Whether you want to lose weight, build <br /> strength, or develop healthy habits, our trainer are ready to help!</p>
-                <button className='w-40 h-12 mr-90 text-sm font-medium text-black bg-[#C7FF39] rounded-xl cursor-pointer'>
-                    Get Started Today
-                </button>
-            </div>
-        </div>
-
-    </div>
-
 
     {/* personal training */}
     <div ref={aboutRef} className='w-auto min-h-screen bg-[#363537]'>
         {/* Categor Banner */}
-        <div className='w-full h-15 text-2xl font-bold bg-[#FFFFFA] flex flex-row justify-center items-center gap-8'>
-            <p>STRENGTH TRAINING</p>
-            <p className='text-5xl mt-4'>*</p>
-            <p>WEIGHT LIFTING</p>
-            <p className='text-5xl mt-4'>*</p>
+        <div className='w-full h-15 text-2xl font-bold bg-[#FFFFFA] flex flex-row flex-wrap justify-center items-center gap-8 max-[410px]:gap-3 px-2 max-[410px]:text-sm text-center'>
+
+            {/* These two always visible */}
             <p>BODYBUILDING</p>
             <p className='text-5xl mt-4'>*</p>
-            <p>CARDIO</p>
-            <p className='text-5xl mt-4'>*</p>
-            <p>ONLINE & IN-PERSON</p>
+                    
+            <p className='sm:block hidden'>WEIGHT LIFTING</p>
+            <p className='text-5xl mt-4 sm:block hidden'>*</p>
+            <p className='sm:block hidden'>STRENGTH TRAINING</p>
+            <p className='text-5xl mt-4 sm:block hidden'>*</p>
+            <p className='sm:block hidden'>CARDIO</p>
+            <p className='text-5xl mt-4 sm:block hidden'>*</p>
+            <p className='sm:block hidden'>ONLINE & IN-PERSON</p>
         </div>
 
         <div className='w-screen h-full flex flex-row justify-center items-center'>
@@ -433,7 +489,10 @@ const content = () => {
                 Highlight customization and goal achievement, which can be enticing for <br />
                 those looking for tailored fitness solution.
               </p>
-              <button className='w-30 h-13 rounded-2xl text-black bg-[#C7FF39] text-sm font-light flex justify-center items-center cursor-pointer'>
+              <button 
+                className='w-30 h-13 rounded-2xl text-black bg-[#C7FF39] text-sm font-light flex justify-center items-center cursor-pointer'
+                onClick={() => scrollToSection(contactRef)}
+              >
                 Contact Us
               </button>
             </div>
