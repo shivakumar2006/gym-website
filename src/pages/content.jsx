@@ -141,13 +141,13 @@ const content = () => {
                             </p>
                         ))}
                         <button
-                            className='px-4 py-2 border border-white text-white text-sm font-light rounded-xl'
+                            className=' h-12 px-4 py-2 border border-white text-white text-sm font-light rounded-xl'
                             onClick={() => scrollToSection(contactRef)}
                         >
                             Contact US
                         </button>
                         <button
-                            className='px-4 py-2 bg-[#C7FF39] text-black text-sm font-medium rounded-xl'
+                            className='h-12 px-4 py-2 bg-[#C7FF39] text-black text-sm font-medium rounded-xl'
                             onClick={() => scrollToSection(getInTouch)}
                         >
                             Get in Touch
@@ -625,7 +625,7 @@ const content = () => {
             </div>
             <div className='w-7xl border mt-3 border-gray-500'></div>
             <div className='w-full mt-5 flex flex-col justify-around items-center'>
-                <p className='text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400'>Copyright &copy; 2025 profitness. All Rights Reserved.</p>
+                <p className='text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400'>Copyright &copy; 2025 Shiva Kumar. All Rights Reserved.</p>
                 <p className='text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400'>Privacy Policy | Terms of use</p>
             </div>
 
