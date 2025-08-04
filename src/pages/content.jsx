@@ -235,53 +235,57 @@ const content = () => {
             <p className='sm:block hidden'>ONLINE & IN-PERSON</p>
         </div>
 
-        <div className='w-screen h-full flex flex-row justify-center items-center'>
-            <div className='w-200 h-full flex flex-col justify-center items-center'>
-                <div className='w-full h-90 flex flex-col justify-center items-center'>
-                    <p className='text-[130px] mr-35 font-extrabold text-white tracking-tight'>
-                        ﹥<span className='text-[#C7FF39]'>﹥</span>
-                    </p>
-                    <p className='text-4xl ml-10 font-bold text-white'>PERSONAL <span className='text-[#C7FF39]'>TRAINING</span></p>
+        <div className='w-screen h-full flex flex-row justify-center items-center flex-wrap sm:flex-nowrap sm:flex-row flex-col'>
+            <div className='w-200 h-full flex flex-col justify-center items-center order-1 sm:order-none'>
+              <div className='w-full h-90 flex flex-col justify-center items-center'>
+                <p className='text-[130px] md:mr-35 mr-38 font-extrabold text-white tracking-tight'>
+                  ﹥<span className='text-[#C7FF39]'>﹥</span>
+                </p>
+                <p className='text-4xl lg:ml-10 font-bold text-white'>PERSONAL <span className='text-[#C7FF39]'>TRAINING</span></p>
+              </div>
+              <div className='w-full h-100 flex justify-center items-center'>
+                <div className='w-80 h-70 rounded-2xl bg-black/20 flex flex-col justify-center items-center gap-10'>
+                  <p className='text-white'>Experience a full personal training <br /> sessions, free of charge</p>
+                  <button 
+                    className='w-40 mr-23 h-12 text-lg font-medium text-black bg-[#C7FF39] rounded-xl cursor-pointer'
+                    onClick={() => scrollToSection(pricingRef)}    
+                  >
+                    See Price
+                  </button>
                 </div>
-                <div className='w-full h-100 flex justify-center items-center'>
-                    <div className='w-80 h-70 rounded-2xl bg-black/20 flex flex-col justify-center items-center gap-10'>
-                        <p className='text-white'>Experience a full personal training <br /> sessions, free of charge</p>
-                        <button 
-                            className='w-40 mr-23 h-12 text-lg font-medium text-black bg-[#C7FF39] rounded-xl cursor-pointer'
-                            onClick={() => scrollToSection(pricingRef)}    
-                        >
-                            See Price
-                        </button>
-                    </div>
-                </div>
+              </div>
             </div>
-            <div className='w-full h-full flex flex-row justify-center items-center'>
-                <div className='w-1/2 h-full ml-10  transition-transform duration-300 hover:scale-103'>
-                    <LazyLoadImage 
-                        src={personal}
-                        alt='personal'
-                        effect='blur'
-                        className='w-80 h-120 rounded-2xl shadow-2xl'
-                    />
+
+            <div className='w-full h-full flex sm:flex-row flex-col justify-center items-center order-2 sm:order-none'>
+              {/* First Image */}
+              <div className='lg:w-1/2 w-full h-full pl-12 lg:ml-10 transition-transform duration-300 hover:scale-103 sm:order-none order-2'>
+                <LazyLoadImage 
+                  src={personal}
+                  alt='personal'
+                  effect='blur'
+                  className='lg:w-80 w-full h-120 rounded-2xl shadow-2xl'
+                />
+              </div>
+
+              {/* Second Image & Text */}
+              <div className='w-1/2 h-full flex flex-col sm:order-none order-3 items-center sm:items-start'>
+                <div className='transition-transform duration-300 hover:scale-103 mb-5 lg:mt-0 mt-5'>
+                  <LazyLoadImage 
+                    src={personal2}
+                    effect='blur'
+                    className='lg:w-90 w-120 h-40 lg:h-60 rounded-2xl shadow-2xl'
+                  />
                 </div>
-                <div className='w-1/2 h-full flex flex-col '>
-                <div className='transition-transform duration-300 hover:scale-103'>
-                    <LazyLoadImage 
-                        src={personal2}
-                        effect='blur'
-                        className='w-90 h-60 mb-5 rounded-2xl shadow-2xl '
-                    />
+                <p className='text-white font-light text-center sm:text-left'>
+                  Whether you looking for build muscle, lose fat, or <br /> improve mobility, every session is customized to fit your <br /> needs and fitness level
+                </p>
+                <div className='w-30 h-30 rounded-2xl mb-10 lg:mb-0 bg-[#C7FF39] mt-5 flex flex-col justify-center items-center gap-2'>
+                  <p className='font-extrabold text-4xl'>10+</p>
+                  <p className='font-extralight'>personal <br /> Trainers</p>
                 </div>
-                    <p className='text-white font-light'>
-                        Whether you looking for build muscle, lose fat, or <br /> improve mobility, every session is customized to fit your <br /> needs and fitnes level
-                    </p>
-                    <div className='w-30 h-30 rounded-2xl bg-[#C7FF39] mt-5 flex flex-col justify-center items-center gap-2'>
-                        <p className='font-extrabold text-4xl'>10+</p>
-                        <p className='font-extralight'>persona <br /> Trainers</p>
-                    </div>
-                </div>
+              </div>
             </div>
-        </div>
+          </div>
     </div>
 
         {/* programs */}
