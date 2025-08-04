@@ -134,7 +134,7 @@ const content = () => {
                         ].map((item, index) => (
                             <p
                                 key={index}
-                                className='text-white font-extralight text-sm lg:mr-[30px] cursor-pointer hover:text-[#C7FF39]'
+                                className='text-white font-extralight text-sm lg:mr-[40px] cursor-pointer hover:text-[#C7FF39]'
                                 onClick={() => scrollToSection(item.ref)}
                             >
                                 {item.name}
