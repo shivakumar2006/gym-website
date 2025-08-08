@@ -431,12 +431,12 @@ const content = () => {
        <div className="w-full flex justify-center items-center mt-20">
         {/* Desktop/Laptop View */}
         <div className="hidden sm:flex group relative w-80 h-80 bg-white rounded-3xl overflow-hidden transition-all duration-700 hover:w-[46rem] hover:shadow-[0_15px_40px_rgba(0,0,0,0.15)] items-center cursor-pointer border border-gray-200">
-          
+
           {/* Soft Glow Border on Hover */}
           <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition duration-700 blur-2xl">
             <div className="w-full h-full bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 opacity-30"></div>
           </div>
-          
+
           {/* Image Section */}
           <div className="z-10 flex-shrink-0 transition-all duration-700 ease-in-out group-hover:scale-[1.05] group-hover:translate-x-[-1rem]">
             <LazyLoadImage
@@ -446,7 +446,7 @@ const content = () => {
               className="w-80 h-80 object-cover rounded-3xl shadow-md"
             />
           </div>
-          
+
           {/* Text Section */}
           <div className="z-10 w-0 opacity-0 group-hover:w-[25rem] group-hover:opacity-100 transition-all duration-700 ease-in-out px-8 text-black">
             <h2 className="text-3xl font-extrabold mb-2 tracking-wide">JAME JONNA JAMESON</h2>
@@ -459,7 +459,7 @@ const content = () => {
             </p>
           </div>
         </div>
-          
+
         {/* Mobile View */}
         <div className="flex sm:hidden flex-col items-center bg-white rounded-3xl shadow-md border border-gray-200 w-80 p-4">
           <LazyLoadImage
@@ -483,34 +483,53 @@ const content = () => {
 
 
           {/* tstimonials */}
-          <div ref={blogsRef} className='w-full flex flex-col'>
-            <p className='text-[130px] ml-20 font-extrabold text-white tracking-tight'>
-                ﹥<span className='text-[#C7FF39]'>﹥</span>
-            </p>
-          </div>
-          <div className='w-full h-auto flex flex-row justify-around items-center gap-50'>
-            <p className='text-4xl ml-20 text-white font-bold'>WHAT ARE CUSTOMERS SAY: REAL <br /> RESULTS,  <span className='text-[#C7FF39]'>REAL VALUE!</span></p>
-            <p className='text-[12px] font-extralight text-white'>Starting your daya with a strong routine can transform your life. Engaging in a <br /> focused and dynamic practice not only enhance your mastery of poses but <br /> also paves the way for tackling more advanced techniques.</p>
+          {/* Hide this part on mobile */}
+        <div 
+          ref={blogsRef} 
+          className="hidden md:flex w-full mt-20 flex-col"
+        >
+          <p className="text-[130px] ml-20 font-extrabold text-white tracking-tight">
+            ﹥<span className="text-[#C7FF39]">﹥</span>
+          </p>
         </div>
+
+        {/* This shows on all devices */}
+        <div 
+          className="w-full h-auto flex flex-col mt-20 lg:mt-0 md:flex-row justify-around items-center gap-5 md:gap-50"
+        >
+          <p className="text-2xl sm:text-3xl md:text-4xl ml-0 md:ml-20 text-white font-bold text-center md:text-left">
+            WHAT ARE CUSTOMERS SAY: REAL <br className="hidden md:block" /> 
+            RESULTS, <span className="text-[#C7FF39]">REAL VALUE!</span>
+          </p>
+
+          <p className="text-[12px] font-extralight text-white text-center md:text-left mt-4 md:mt-0 px-4 md:px-0">
+            Starting your day with a strong routine can transform your life. Engaging in a <br className="hidden md:block" /> 
+            focused and dynamic practice not only enhances your mastery of poses but <br className="hidden md:block" /> 
+            also paves the way for tackling more advanced techniques.
+          </p>
+        </div>
+
         <div className="w-full mt-10 flex justify-center items-center">
-          <div className="w-full max-w-7xl rounded-2xl overflow-x-auto scroll-smooth flex flex-nowrap gap-6 px-4">
+          <div className="w-full max-w-7xl rounded-2xl overflow-x-auto scroll-smooth flex flex-nowrap gap-4 px-4 pb-4 no-scrollbar">
             {/* Testimonial Cards */}
             {blogs?.map((item, index) => (
               <div
                 key={index}
-                className="min-w-[550px] max-w-full bg-white/10 rounded-2xl shadow-lg p-6 flex flex-col justify-between text-white"
+                className="min-w-[280px] sm:min-w-[350px] md:min-w-[450px] lg:min-w-[550px] bg-white/10 rounded-2xl shadow-lg p-4 sm:p-6 flex flex-col justify-between text-white"
               >
                 {/* Testimonial Text */}
                 <div className="w-full">
-                  <p className="text-base font-medium leading-relaxed break-words whitespace-normal">
+                  <p className="text-sm sm:text-base font-medium leading-relaxed break-words whitespace-normal">
                     {item.description}
                   </p>
                 </div>
             
                 {/* User Info */}
                 <div className="flex items-center justify-start gap-3 mt-4">
-                  <FaUserCircle className="w-10 h-10 rounded-full" />
-                  <span className="text-sm text-white/80 font-semibold">— {item.name}</span>
+                  <FaUserCircle className="w-8 h-8 sm:w-10 sm:h-10 rounded-full" />
+                  <span className="text-xs sm:text-sm text-white/80 font-semibold">
+                    — {item.name}
+                  </span>
                 </div>
               </div>
             ))}
@@ -518,47 +537,59 @@ const content = () => {
         </div>
 
 
-            {/* personalized workout */}
-        <div className='w-full flex mt-30 justify-center items-center'>
-          <div className='relative w-[920px] h-[480px] rounded-2xl flex justify-center items-center'>
-            <LazyLoadImage 
-              src={consult}
-              alt='consult'
-              effect='blur'
-              className='w-full h-full opacity-60 rounded-2xl object-cover'
-              wrapperClassName="w-full h-full rounded-2xl opacity-60"
-            />
 
-            {/* Centered overlay */}
-            <div className='absolute inset-0 z-50 text-white flex flex-col justify-center items-center text-center gap-4'>
-              <p className='text-4xl  font-extrabold'>
-                PERSONALIZED WORKOUT PLANS <br /> 
-                <span className='text-[#C7FF39]'>ACHIEVE </span> YOUR GOALS.
-              </p>
-              <p className='text-[10px] font-extralight'>
-                Highlight customization and goal achievement, which can be enticing for <br />
-                those looking for tailored fitness solution.
-              </p>
-              <button 
-                className='w-30 h-13 rounded-2xl text-black bg-[#C7FF39] text-sm font-light flex justify-center items-center cursor-pointer'
-                onClick={() => scrollToSection(contactRef)}
-              >
-                Contact Us
-              </button>
+            {/* personalized workout */}
+          <div className="w-full flex mt-10 sm:mt-30 justify-center items-center px-4">
+            <div className="relative w-full max-w-[920px] aspect-[16/9] rounded-2xl flex justify-center items-center">
+              <LazyLoadImage
+                src={consult}
+                alt="consult"
+                effect="blur"
+                className="w-full h-full opacity-60 rounded-2xl object-cover"
+                wrapperClassName="w-full h-full rounded-2xl opacity-60"
+              />
+
+              {/* Centered overlay */}
+              <div className="absolute inset-0 z-50 text-white flex flex-col justify-center items-center text-center gap-4 p-4">
+                <p className="text-lg sm:text-2xl md:text-4xl font-extrabold leading-snug">
+                  PERSONALIZED WORKOUT PLANS <br />
+                  <span className="text-[#C7FF39]">ACHIEVE </span> YOUR GOALS.
+                </p>
+
+                <p className="text-[10px] sm:text-xs md:text-sm font-extralight max-w-[90%] sm:max-w-[80%]">
+                  Highlight customization and goal achievement, which can be enticing for
+                  those looking for tailored fitness solutions.
+                </p>
+
+                <button
+                  className="lg:w-30 lg:h-13 px-4 py-2 rounded-2xl text-black bg-[#C7FF39] text-xs sm:text-sm font-light flex justify-center items-center cursor-pointer"
+                  onClick={() => scrollToSection(contactRef)}
+                >
+                  Contact Us
+                </button>
+              </div>
             </div>
           </div>
+
+        <div className="w-full mt-10 sm:mt-15 flex justify-center items-center px-4">
+          <div className="w-full max-w-5xl flex flex-wrap justify-center sm:justify-between items-center gap-4">
+            {cards?.map((item, index) => (
+              <div
+                key={index}
+                className="flex-1 min-w-[140px] max-w-[180px] h-28 rounded-2xl bg-white/10 flex flex-col justify-center items-center gap-2"
+              >
+                <p className="text-white text-2xl sm:text-4xl font-extrabold">
+                  {item.number}
+                  <span className="text-sm sm:text-md font-extrabold">+</span>
+                </p>
+                <p className="text-white font-extralight text-[10px] sm:text-xs text-center px-1">
+                  {item.title}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className='w-full mt-15 flex justify-center items-center'>
-            <div className='w-4xl h-30 flex flex-row justify-between items-center'>
-                {cards?.map((item, index) => (
-                    <div key={index} className='w-40 h-30 rounded-2xl bg-white/10 flex flex-col justify-center items-center gap-3'>
-                    <p className='text-white text-4xl font-extrabold'>{item.number}<span className='text-md font-extrabold'>+</span></p>
-                    <p className='text-white font-extralight text-[10px]'>{item.title}</p>
-                </div>
-                ))}
-                
-            </div>
-        </div>
+
 
         {/* contact */}
         <div ref={contactRef} className='w-full min-h-screen mt-20 flex justify-center items-center'>
