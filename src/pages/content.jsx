@@ -407,7 +407,7 @@ const content = () => {
   </div>
 
       {/* Footer Text */}
-    <div className="w-full mt-40 pl-30 font-bold text-white flex justify-start items-center gap-2 text-4xl sm:text-4xl text-2xl flex-wrap sm:flex-nowrap">
+    <div className="w-full mt-40 pl-10 lg:pl-30 font-bold text-white text-center flex justify-start items-center gap-2 lg:text-4xl sm:text-4xl text-3xl flex-wrap sm:flex-nowrap">
       GET YOUR <span className="text-[#C7FF39]">MEMBERSHIP</span> AND START{" "}
       <span className="text-[#C7FF39]">YOUR JOURNEY</span>
     </div>
@@ -418,10 +418,16 @@ const content = () => {
 
           {/* trainers */}
     <div className='w-auto min-h-screen bg-black/90 flex flex-col'>
-        <div className='w-full h-auto mt-20 flex flex-row justify-around items-center gap-50'>
-            <p className='text-4xl text-white font-bold'>TEAM OF  <span className='text-[#C7FF39]'>EXPERT COACHES</span></p>
-            <p className='text-[12px] font-extralight text-white'>The best way to start your day. Structured, powerful practice that focuses on <br /> masters of poses and progressionto more advances levels. </p>
+        <div className="w-full h-auto mt-20 flex lg:flex-row flex-col sm:flex-row justify-around items-center gap-6 sm:gap-50 text-center sm:text-left">
+          <p className="text-4xl text-white font-bold order-1">
+            TEAM OF <span className="text-[#C7FF39]">EXPERT COACHES</span>
+          </p>
+          <p className="text-[12px] font-extralight text-white order-2">
+            The best way to start your day. Structured, powerful practice that focuses on <br className="hidden sm:block" /> 
+            masters of poses and progression to more advanced levels.
+          </p>
         </div>
+
        <div className="w-full flex justify-center items-center mt-20">
         <div className="group relative w-80 h-80 bg-white rounded-3xl overflow-hidden transition-all duration-700 hover:w-[46rem] hover:shadow-[0_15px_40px_rgba(0,0,0,0.15)] flex items-center cursor-pointer border border-gray-200">
           
