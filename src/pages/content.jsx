@@ -429,7 +429,8 @@ const content = () => {
         </div>
 
        <div className="w-full flex justify-center items-center mt-20">
-        <div className="group relative w-80 h-80 bg-white rounded-3xl overflow-hidden transition-all duration-700 hover:w-[46rem] hover:shadow-[0_15px_40px_rgba(0,0,0,0.15)] flex items-center cursor-pointer border border-gray-200">
+        {/* Desktop/Laptop View */}
+        <div className="hidden sm:flex group relative w-80 h-80 bg-white rounded-3xl overflow-hidden transition-all duration-700 hover:w-[46rem] hover:shadow-[0_15px_40px_rgba(0,0,0,0.15)] items-center cursor-pointer border border-gray-200">
           
           {/* Soft Glow Border on Hover */}
           <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition duration-700 blur-2xl">
@@ -441,7 +442,7 @@ const content = () => {
             <LazyLoadImage
               src={trainer}
               alt="Trainer"
-              effect='blur'
+              effect="blur"
               className="w-80 h-80 object-cover rounded-3xl shadow-md"
             />
           </div>
@@ -457,10 +458,29 @@ const content = () => {
               🏆 Hardcore Training + Mentorship
             </p>
           </div>
-
         </div>
+          
+        {/* Mobile View */}
+        <div className="flex sm:hidden flex-col items-center bg-white rounded-3xl shadow-md border border-gray-200 w-80 p-4">
+          <LazyLoadImage
+            src={trainer}
+            alt="Trainer"
+            effect="blur"
+            className="w-72 h-72 object-cover rounded-3xl shadow-md"
+          />
+          <div className="mt-4 text-center text-black">
+            <h2 className="text-2xl font-extrabold mb-1 tracking-wide">JAME JONNA JAMESON</h2>
+            <p className="text-sm font-normal mb-2 italic text-gray-700">21 years • Trainer</p>
+            <p className="text-sm leading-relaxed text-gray-800 font-medium">
+              🏋️ Powerlifter, Indian Team 🇮🇳<br />
+              🥈 National Silver Medalist (2024)<br />
+              🦾 Jr Strongman, State Champion<br />
+              🏆 Hardcore Training + Mentorship
+            </p>
+          </div>
+        </div>
+      </div>
 
-    </div>
 
           {/* tstimonials */}
           <div ref={blogsRef} className='w-full flex flex-col'>
