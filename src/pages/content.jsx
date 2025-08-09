@@ -591,136 +591,192 @@ const content = () => {
         </div>
 
 
-        {/* contact */}
-        <div ref={contactRef} className='w-full min-h-screen mt-20 flex justify-center items-center'>
-                <div className='w-1/2 h-screen flex-col flex justify-evenly items-center'>
-                    <p className='text-white text-6xl font-extrabold mr-75'>CON<span className='text-[#C7FF39]'>TACT</span></p>
-                    <div className='w-xl h-140 rounded-2xl bg-white/10 flex flex-col'>
-                        <p className='w-full mt-8 ml-5 text-white text-5xl font-extrabold mr-80'>GET IN <span className='text-[#C7FF39]'> TOUCH</span></p>
-                        <div className='w-full h-20 mt-10 flex flex-row justify-center items-center'>
-                            <div className='w-1/2 h-20 flex flex-col justify-evenly items-center'>
-                                <p className='text-white font-bold mr-40'>NAME</p>
-                                <input 
-                                    type='text'
-                                    required
-                                    placeholder='Your name'
-                                    className='w-60 h-10 bg-black/20 placeholder:text-gray-300 placeholder:font-light placeholder:text-[13px] pl-5 rounded-2xl'
-                                />
-                            </div>
-                            <div className='w-1/2 h-20 flex flex-col justify-evenly items-center'>
-                                <p className='text-white font-bold mr-40'>EMAIL</p>
-                                <input 
-                                    type='text'
-                                    required
-                                    placeholder='youremail@gmail.com'
-                                    className='w-60 h-10 text-white bg-black/20 placeholder:text-gray-300 placeholder:font-light placeholder:text-[13px] pl-5 rounded-2xl'
-                                />
-                            </div>
-                        </div>
-                        <div className='w-1/2 mt-5 flex flex-col justify-evenly items-center'>
-                                <p className='w-full text-white font-bold ml-15'>LEAVE US A MESSAGE</p>
-                                <textarea 
-                                    name='message'
-                                    required
-                                    placeholder='leave us a message'
-                                    className='w-135 h-65 ml-70 pt-3 text-white bg-black/20 placeholder:text-gray-300 placeholder:font-light placeholder:text-[13px] pl-5 pr-5 rounded-2xl'
-                                />
-                        </div>
-                        <button type='submit' className='w-50 h-8 mb-3 bg-white rounded-2xl mt-4 md:ml-88 ml-10 max-[409px]:ml-30 max-[409px]:mb-5 cursor-pointer text-black'>
-                            Send message
-                        </button>
-                    </div>
-                </div>
+       {/* contact */}
+        <div
+          ref={contactRef}
+          className="w-full min-h-screen mt-20 flex flex-col md:flex-row justify-center items-center"
+        >
+          {/* Left Side - Form */}
+          <div className="w-full md:w-1/2 h-auto md:h-screen flex flex-col justify-evenly items-center px-4">
+            <p className="text-white text-4xl md:text-6xl font-extrabold md:mr-75">
+              CON<span className="text-[#C7FF39]">TACT</span>
+            </p>
 
-                {/* map section */}
-                <div className='w-1/2 h-screen flex flex-col justify-center items-center'>
-                    <div className=' w-full h-80 flex justify-center items-center'>
+            <div className="w-full md:w-xl rounded-2xl bg-white/10 flex flex-col p-4 md:p-0">
+              <p className="w-full mt-4 md:mt-8 md:ml-5 text-white text-3xl md:text-5xl font-extrabold">
+                GET IN <span className="text-[#C7FF39]">TOUCH</span>
+              </p>
 
-                      {/* Right Side Map */}
-                      <div className='w-150 h-80'>
-                        <LeafMap />
-                      </div>
-                    </div>
+              {/* Name & Email */}
+              <div className="w-full mt-6 md:mt-10 flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0">
+                <div className="w-full md:w-1/2 flex flex-col justify-evenly items-start md:items-center">
+                  <p className="text-white lg:mr-39 font-bold">NAME</p>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Your name"
+                    className="w-full md:w-60 h-10 bg-black/20 placeholder:text-gray-300 placeholder:font-light placeholder:text-[13px] pl-5 rounded-2xl"
+                  />
                 </div>
+                <div className="w-full md:w-1/2 flex flex-col justify-evenly items-start md:items-center">
+                  <p className="text-white lg:mr-39 font-bold">EMAIL</p>
+                  <input
+                    type="text"
+                    required
+                    placeholder="youremail@gmail.com"
+                    className="w-full md:w-60 h-10 text-white bg-black/20 placeholder:text-gray-300 placeholder:font-light placeholder:text-[13px] pl-5 rounded-2xl"
+                  />
+                </div>
+              </div>
+
+              {/* Message */}
+              <div className="w-full mt-5 flex flex-col">
+                <p className="w-full lg:ml-10 text-white font-bold">LEAVE US A MESSAGE</p>
+                <textarea
+                  name="message"
+                  required
+                  placeholder="leave us a message"
+                  className="w-full md:w-135 h-40 lg:ml-4 md:h-65 pt-3 text-white bg-black/20 placeholder:text-gray-300 placeholder:font-light placeholder:text-[13px] pl-5 pr-5 rounded-2xl"
+                />
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                className="w-full md:w-50 h-10 lg:mb-4 lg:ml-90 bg-white rounded-2xl mt-4 cursor-pointer text-black"
+              >
+                Send message
+              </button>
+            </div>
+          </div>
+
+          {/* Right Side - Map */}
+          <div className="w-full md:w-1/2 h-64 md:h-screen flex flex-col justify-center items-center mt-6 md:mt-0">
+            <div className="w-full h-64 md:h-80 flex justify-center items-center">
+              <div className="w-full md:w-150 h-full">
+                <LeafMap />
+              </div>
+            </div>
+          </div>
         </div>
+
 
         {/* Footer */}
-        <div ref={getInTouch}
-            className='w-full flex flex-col justify-center items-center'>
-            <div className='w-7xl h-60 flex flex-row justify-between items-center'>
-                <div className='w-70 h-60 flex flex-col justify-center items-center gap-5'>
-                   <div className='w-auto h-auto flex flex-row justify-center items-center gap-2'>
-                        <CgGym className='text-[#C7FF39] text-5xl'/>
-                        <p className='text-white text-3xl font-bold'>PROFITNESS</p>
-                   </div>
-                   <p className='text-white font-extralight text-[10px]'>
-                        Ready to boost your fitness? join us for <br /> personalized training plans and expert guidance. <br /> we're here to help you achieve your goals!
-                   </p>
-                   <div className='w-full pl-5 mt-3 flex flex-row justify-start items-center gap-3'>
-                        <div className='rounded-full w-10 h-10 bg-gray-300 flex justify-center items-center cursor-pointer'>
-                            <SiInstagram className='text-xl'/>
-                        </div>
-                         <div className='rounded-full w-10 h-10 bg-gray-300 flex justify-center items-center cursor-pointer'>
-                            <FaFacebookF className='text-xl'/>
-                        </div>
-                        <div className='rounded-full w-10 h-10 bg-gray-300 flex justify-center items-center cursor-pointer'>
-                            <FaYoutube className='text-xl'/>
-                        </div>
-                        <div className='rounded-full w-10 h-10 bg-gray-300 flex justify-center items-center cursor-pointer'>
-                            <SiWhatsapp className='text-xl'/>
-                        </div>
-                    </div>
+        <div
+          ref={getInTouch}
+          className="w-full mt-50 lg:mt-0 flex flex-col justify-center items-center px-4 md:px-0"
+        >
+          <div className="w-full max-w-7xl flex flex-col md:flex-row justify-between items-center gap-10 md:gap-0">
+            {/* Logo & Description */}
+            <div className="w-full md:w-70 h-auto flex flex-col justify-center items-center md:items-start gap-5 text-center md:text-left">
+              <div className="w-auto h-auto flex flex-row justify-center md:justify-start items-center gap-2">
+                <CgGym className="text-[#C7FF39] text-5xl" />
+                <p className="text-white text-3xl font-bold">PROFITNESS</p>
+              </div>
+              <p className="text-white font-extralight text-[10px] max-w-xs md:max-w-none">
+                Ready to boost your fitness? join us for <br />
+                personalized training plans and expert guidance. <br />
+                we're here to help you achieve your goals!
+              </p>
+              <div className="w-full flex flex-row justify-center md:justify-start items-center gap-3">
+                <div className="rounded-full w-10 h-10 bg-gray-300 flex justify-center items-center cursor-pointer">
+                  <SiInstagram className="text-xl" />
                 </div>
-                <div className='w-50 h-60 flex flex-col justify-evenly items-center'>
-                        <p className='text-xl font-extrabold text-white'>QUICK LINKS</p>
-                        <p 
-                            className='text-[12px] mr-22 text-gray-300 font-extralight cursor-pointer hover:text-gray-400'
-                            onClick={() => scrollToSection(aboutRef)}
-                        >About</p>
-                        <p 
-                            className='text-[12px] mr-19 text-gray-300 font-extralight cursor-pointer hover:text-gray-400'
-                            onClick={() => scrollToSection(programsRef)}
-                        >Program</p>
-                        <p 
-                            className='text-[12px] mr-21 text-gray-300 font-extralight cursor-pointer hover:text-gray-400'
-                            onClick={() => scrollToSection(pricingRef)}
-                        >Pricing</p>
-                        <p 
-                            className='text-[12px] mr-14 text-gray-300 font-extralight cursor-pointer hover:text-gray-400'
-                            onClick={() => scrollToSection(blogsRef)}
-                        >Testimonials</p>
+                <div className="rounded-full w-10 h-10 bg-gray-300 flex justify-center items-center cursor-pointer">
+                  <FaFacebookF className="text-xl" />
                 </div>
-                <div className='w-50 h-60 flex flex-col justify-evenly items-center'>
-                        <p className='text-xl font-extrabold text-white'>PROGRAMS</p>
-                        <p className='text-[12px] mr-10 text-gray-300 font-extralight cursor-pointer hover:text-gray-400'>Weight Lifting</p>
-                        <p className='text-[12px] mr-20 text-gray-300 font-extralight cursor-pointer hover:text-gray-400'>Cardio</p>
-                        <p className='text-[12px] mr-11 text-gray-300 font-extralight cursor-pointer hover:text-gray-400'>Bodybuilding</p>
-                        <p className='text-[12px] mr-0 text-gray-300 font-extralight cursor-pointer hover:text-gray-400'>Screeching Workouts</p>
+                <div className="rounded-full w-10 h-10 bg-gray-300 flex justify-center items-center cursor-pointer">
+                  <FaYoutube className="text-xl" />
                 </div>
-                <div className='w-50 h-60 flex flex-col justify-evenly items-center'>
-                        <p className='text-xl font-extrabold text-white'>CONTACT US </p>
-                        <p className='text-[12px] mr-3 text-gray-300 font-extralight cursor-pointer hover:text-gray-400 flex flex-row gap-2 '><FiPhoneCall className='text-gray-300 mt-1'/> +91-8576xxxxx7</p>
-                        <p className='text-[12px] mr-1 text-gray-300 font-extralight cursor-pointer hover:text-gray-400 flex flex-row gap-2'><IoMailOutline className='text-gray-300 mt-1 '/>info01@gmail.com</p>
-                        <p className='text-[12px] ml-9 text-gray-300 font-extralight cursor-pointer hover:text-gray-400 flex flex-row gap-2'><IoLocationOutline className='text-gray-300 text-xl mt-1'/>Raj studio, 2nd FLoor, Gurugram, India</p>
+                <div className="rounded-full w-10 h-10 bg-gray-300 flex justify-center items-center cursor-pointer">
+                  <SiWhatsapp className="text-xl" />
                 </div>
+              </div>
             </div>
-            <div className='w-7xl border mt-3 border-gray-500'></div>
-            <div className='w-full mt-5 flex flex-col justify-around items-center'>
-                <p className='text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400'>Copyright &copy; 2025 Shiva Kumar. All Rights Reserved.</p>
-                <p className='text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400'>Privacy Policy | Terms of use</p>
+                  
+            {/* Quick Links */}
+            <div className="w-full md:w-50 flex flex-col justify-evenly items-center md:items-start text-center md:text-left lg:gap-3">
+              <p className="text-xl font-extrabold text-white mb-3">QUICK LINKS</p>
+              <p
+                className="text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400"
+                onClick={() => scrollToSection(aboutRef)}
+              >
+                About
+              </p>
+              <p
+                className="text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400"
+                onClick={() => scrollToSection(programsRef)}
+              >
+                Program
+              </p>
+              <p
+                className="text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400"
+                onClick={() => scrollToSection(pricingRef)}
+              >
+                Pricing
+              </p>
+              <p
+                className="text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400"
+                onClick={() => scrollToSection(blogsRef)}
+              >
+                Testimonials
+              </p>
             </div>
+                  
+            {/* Programs */}
+            <div className="w-full md:w-50 flex flex-col justify-evenly items-center md:items-start text-center md:text-left lg:gap-3">
+              <p className="text-xl font-extrabold text-white mb-3">PROGRAMS</p>
+              <p className="text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400">
+                Weight Lifting
+              </p>
+              <p className="text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400">
+                Cardio
+              </p>
+              <p className="text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400">
+                Bodybuilding
+              </p>
+              <p className="text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400">
+                Screeching Workouts
+              </p>
+            </div>
+                  
+            {/* Contact Us */}
+            <div className="w-full md:w-50 flex flex-col justify-evenly items-center md:items-start text-center md:text-left lg:gap-3">
+              <p className="text-xl font-extrabold text-white mb-3">CONTACT US</p>
+              <p className="text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400 flex flex-row gap-2 justify-center md:justify-start">
+                <FiPhoneCall className="text-gray-300 mt-1" /> +91-8576xxxxx7
+              </p>
+              <p className="text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400 flex flex-row gap-2 justify-center md:justify-start">
+                <IoMailOutline className="text-gray-300 mt-1" /> info01@gmail.com
+              </p>
+              <p className="text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400 flex flex-row gap-2 justify-center md:justify-start">
+                <IoLocationOutline className="text-gray-300 text-xl mt-1" /> Raj studio, 2nd FLoor, Gurugram, India
+              </p>
+            </div>
+          </div>
+                  
+          <div className="w-full max-w-7xl border mt-3 border-gray-500"></div>
+                  
+          <div className="w-full mt-5 flex flex-col justify-around items-center">
+            <p className="text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400 text-center">
+              Copyright &copy; 2025 Shiva Kumar | Shiva Web Studio. All Rights Reserved.
+            </p>
+            <p className="text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400 text-center">
+              Privacy Policy | Terms of use
+            </p>
+          </div>
+                  
+          <div className="relative w-full h-40 lg:h-70 flex pb-10 justify-center items-center">
+            <p className="select-none pointer-events-none text-white/10 font-extrabold leading-none
+                          text-[60px] md:text-[210px] sm:text-8xl xs:text-6xl">
+              PROFITNESS
+            </p>
 
-            <div className="relative w-full h-70 flex pb-10 justify-center items-center">
-  <p className="text-[210px] text-white/10 font-extrabold leading-none">
-    PROFITNESS
-  </p>
+            <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white/10 to-transparent pointer-events-none" />
+          </div>
 
-  {/* Bottom Fade Layer with matching color */}
-  <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white/10 to-transparent pointer-events-none" />
-</div>
+          </div>
 
-
-        </div>
     </div>  
     </>
   )
