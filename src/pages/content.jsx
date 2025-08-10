@@ -115,12 +115,16 @@ const content = () => {
         >
             {/* Navbar */}
             <div className='w-full pt-8 flex justify-center items-center px-4 sm:px-0'>
-                <div className='w-full max-w-7xl h-20 bg-white/5 rounded-2xl backdrop-blur-xs flex justify-between items-center px-6 sm:px-10 relative'>
+                <div className='w-full max-w-7xl h-22 bg-white/5 rounded-2xl backdrop-blur-xs flex justify-between items-center px-6 sm:px-10 relative'>
 
                     {/* Logo */}
-                    <div className='flex items-center gap-2'>
+                    <div className='flex text-center items-center gap-4'>
                         <CgGym className='text-[#C7FF39] text-5xl' />
-                        <p className='text-white text-2xl sm:text-3xl font-bold'>PROFITNESS</p>
+                        <div className='h-20 flex flex-col justify-center items-center'>
+                        <p className='text-sm text-white font-bold'>THE</p>
+                        <p className='text-white text-2xl sm:text-3xl font-bold'>FITNESS</p>
+                        <p className='text-white text-lg'>FACTORY</p>
+                        </div>
                     </div>
 
                     {/* Desktop Nav */}
@@ -449,7 +453,7 @@ const content = () => {
 
           {/* Text Section */}
           <div className="z-10 w-0 opacity-0 group-hover:w-[25rem] group-hover:opacity-100 transition-all duration-700 ease-in-out px-8 text-black">
-            <h2 className="text-3xl font-extrabold mb-2 tracking-wide">JAME JONNA JAMESON</h2>
+            <h2 className="text-3xl font-extrabold mb-2 tracking-wide">ASHOK SAINI</h2>
             <p className="text-md font-normal mb-4 italic text-gray-700">21 years • Trainer</p>
             <p className="text-base leading-relaxed text-gray-800 font-medium space-y-1">
               🏋️ Powerlifter, Indian Team 🇮🇳<br />
@@ -469,7 +473,7 @@ const content = () => {
             className="w-72 h-72 object-cover rounded-3xl shadow-md"
           />
           <div className="mt-4 text-center text-black">
-            <h2 className="text-2xl font-extrabold mb-1 tracking-wide">JAME JONNA JAMESON</h2>
+            <h2 className="text-2xl font-extrabold mb-1 tracking-wide">ASHOK SAINI</h2>
             <p className="text-sm font-normal mb-2 italic text-gray-700">21 years • Trainer</p>
             <p className="text-sm leading-relaxed text-gray-800 font-medium">
               🏋️ Powerlifter, Indian Team 🇮🇳<br />
@@ -671,7 +675,12 @@ const content = () => {
             <div className="w-full md:w-70 h-auto flex flex-col justify-center items-center md:items-start gap-5 text-center md:text-left">
               <div className="w-auto h-auto flex flex-row justify-center md:justify-start items-center gap-2">
                 <CgGym className="text-[#C7FF39] text-5xl" />
-                <p className="text-white text-3xl font-bold">PROFITNESS</p>
+                <div className='h-20 flex flex-col justify-center items-center'>
+                        <p className='text-sm text-white font-bold'>THE</p>
+                        <p className='text-white text-2xl sm:text-3xl font-bold'>FITNESS</p>
+                        <p className='text-white text-lg'>FACTORY</p>
+                        </div>
+                {/* <p className="text-white text-3xl font-bold">PROFITNESS</p> */}
               </div>
               <p className="text-white font-extralight text-[10px] max-w-xs md:max-w-none">
                 Ready to boost your fitness? join us for <br />
@@ -679,18 +688,37 @@ const content = () => {
                 we're here to help you achieve your goals!
               </p>
               <div className="w-full flex flex-row justify-center md:justify-start items-center gap-3">
+
+                <a href='https://www.instagram.com/godvenus98?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
+                    target='_blank'
+                    rel='noopener noreferer'
+                  >
                 <div className="rounded-full w-10 h-10 bg-gray-300 flex justify-center items-center cursor-pointer">
-                  <SiInstagram className="text-xl" />
+                    <SiInstagram className="text-xl" />
                 </div>
+                </a>
+
                 <div className="rounded-full w-10 h-10 bg-gray-300 flex justify-center items-center cursor-pointer">
                   <FaFacebookF className="text-xl" />
                 </div>
+
+                <a href='https://www.youtube.com/@shivakumar2006-j'
+                    target='_blank'
+                    rel='noopener noreferer'
+                  >
                 <div className="rounded-full w-10 h-10 bg-gray-300 flex justify-center items-center cursor-pointer">
-                  <FaYoutube className="text-xl" />
+                    <FaYoutube className="text-xl" />
                 </div>
+                </a>
+
+                <a href='https://wa.me/919999624402'
+                    target='_blank'
+                    rel='noopener noreferer'
+                  >
                 <div className="rounded-full w-10 h-10 bg-gray-300 flex justify-center items-center cursor-pointer">
-                  <SiWhatsapp className="text-xl" />
+                    <SiWhatsapp className="text-xl" />
                 </div>
+                </a>
               </div>
             </div>
                   
@@ -744,13 +772,13 @@ const content = () => {
             <div className="w-full md:w-50 flex flex-col justify-evenly items-center md:items-start text-center md:text-left lg:gap-3">
               <p className="text-xl font-extrabold text-white mb-3">CONTACT US</p>
               <p className="text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400 flex flex-row gap-2 justify-center md:justify-start">
-                <FiPhoneCall className="text-gray-300 mt-1" /> +91-8576xxxxx7
+                <FiPhoneCall className="text-gray-300 mt-1" /> +91-9999624402
               </p>
               <p className="text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400 flex flex-row gap-2 justify-center md:justify-start">
                 <IoMailOutline className="text-gray-300 mt-1" /> info01@gmail.com
               </p>
               <p className="text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400 flex flex-row gap-2 justify-center md:justify-start">
-                <IoLocationOutline className="text-gray-300 text-xl mt-1" /> Raj studio, 2nd FLoor, Gurugram, India
+                <IoLocationOutline className="text-gray-300 text-xl ml-6 lg:ml-0 lg:text-5xl lg:mb-5" /> Plot no. 140, near Unitech Signature Tower, Saini Khera Village, Sector 30, Gurugram, Harayana 122003
               </p>
             </div>
           </div>
@@ -766,10 +794,18 @@ const content = () => {
             </p>
           </div>
                   
-          <div className="relative w-full h-40 lg:h-70 flex pb-10 justify-center items-center">
+          <div className="relative w-full h-60 lg:h-130 flex flex-col pb-10 justify-center items-center">
             <p className="select-none pointer-events-none text-white/10 font-extrabold leading-none
-                          text-[60px] md:text-[210px] sm:text-8xl xs:text-6xl">
-              PROFITNESS
+                          text-[60px] md:text-[90px] lg:mr-4 sm:text-8xl xs:text-6xl">
+              THE
+            </p>
+            <p className="select-none pointer-events-none text-white/10 font-extrabold leading-none
+                          text-[60px] md:text-[250px] sm:text-8xl xs:text-6xl">
+              FITNESS
+            </p>
+            <p className="select-none pointer-events-none text-white/10 font-extrabold leading-none
+                          text-[60px] md:text-[120px] sm:text-8xl xs:text-6xl">
+              FACTORY
             </p>
 
             <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white/10 to-transparent pointer-events-none" />
