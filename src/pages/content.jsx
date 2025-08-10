@@ -698,10 +698,6 @@ const content = () => {
                 </div>
                 </a>
 
-                <div className="rounded-full w-10 h-10 bg-gray-300 flex justify-center items-center cursor-pointer">
-                  <FaFacebookF className="text-xl" />
-                </div>
-
                 <a href='https://www.youtube.com/@shivakumar2006-j'
                     target='_blank'
                     rel='noopener noreferer'
@@ -719,6 +715,13 @@ const content = () => {
                     <SiWhatsapp className="text-xl" />
                 </div>
                 </a>
+
+                <a href="mailto:official.shivakumar06@gmail.com">
+                  <div className="rounded-full w-10 h-10 bg-gray-300 flex justify-center items-center cursor-pointer">
+                    <IoMailOutline className="text-xl" />
+                  </div>
+                </a>
+
               </div>
             </div>
                   

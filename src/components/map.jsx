@@ -29,7 +29,7 @@ const Map = () => {
         />
         <Marker position={position}>
           <Popup>
-            Exact Location <br /> 28.475639° N, 77.040861° E
+            The Fitness Factory GYM <br /> 28.475639° N, 77.040861° E
           </Popup>
         </Marker>
       </MapContainer>
