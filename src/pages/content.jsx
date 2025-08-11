@@ -54,7 +54,7 @@ const content = () => {
     const programs = [
       { title: "BODYBUILDING", image: bodybuilding },
       { title: "REGULAR WORKOUT", image: regular },
-      { title: "SCREETCHING WORKOUT", image: work }
+      { title: "Stretching WORKOUT", image: work }
     ];
 
     const price = [
@@ -767,7 +767,7 @@ const content = () => {
                 Bodybuilding
               </p>
               <p className="text-[12px] text-gray-300 font-extralight cursor-pointer hover:text-gray-400">
-                Screeching Workouts
+                Stretching Workouts
               </p>
             </div>
                   
